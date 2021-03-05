@@ -1,4 +1,3 @@
-// Some required global variables
 const quizContainer = document.getElementById('quizContainerNameHere');
 let quizFormElement = document.getElementById("quiz-form");
 const resultsContainer = document.getElementById('resultsContainerNameHere');
@@ -16,10 +15,9 @@ let usersTotalScore = 0;
  * @param {Integer} questionNum - the global question index
  */
 function getQuestions(questionNum){
-    fetch('https://how-patrick-are-you-default-rtdb.europe-west1.firebasedatabase.app/questions.json')
+    fetch('/data/quiz.json')
     .then(response => response.json())
     .then(data => {
-      console.log("heeelp"+data)
       // get the length of the object
       let limit = (Object.keys(data.questions).length);
       // if question num is still in range - build next question
@@ -29,9 +27,7 @@ function getQuestions(questionNum){
       else{
         callResults()
       } 
-    }).catch(function (error) {
-      console.log("ERROR !" + error.message);
-  });
+    });
 }
 
 /** 
@@ -54,7 +50,7 @@ function questionBuilder(question, questionNumber){
     possibleAnswers.push(
       `<label>
       <input type="radio" name="question${questionNumber}Answers" value="${answerNumber}">
-      ${answerNumber} :
+      ${answerNumber+1} : // to have the displayed numbers 1 more than the array index
       ${answer}
       </label>`)
   });
@@ -140,13 +136,15 @@ function updateScore(score){
  */
 function callResults(){
   if (usersTotalScore < 30){
-    quizFormElement.innerHTML = `<h1>Terrible! St. Patrick?? more like St. Polar opposite! - your score is ${usersTotalScore}</h1>`;
+    quizFormElement.innerHTML = `<h1>Terrible! St. Patrick?? You are like an Anti-Patrick - your score is ${usersTotalScore}% GoodBye</h1>`;
   }
   else if (usersTotalScore >= 30 && usersTotalScore < 60){
-    quizFormElement.innerHTML = `<h1>Congratulations!! You compare to St. Patrick in the same way I compare to Brad Pitt! - your score is ${usersTotalScore}</h1>`;
+    quizFormElement.innerHTML = `<h1>Congratulations!! You compare to St. Patrick in the same way I compare to Brad Pitt! - your score is ${usersTotalScore}%</h1>`;
   }
   else {
-    quizFormElement.innerHTML = `<h1>Heeelllo Saint Patrick! Alive and well you are looking!! Your score is ${usersTotalScore}</h1>`;
+    quizFormElement.innerHTML = `<h1>Heeelllo Saint Patrick! Alive and well you are looking!! Your score is ${usersTotalScore}%</h1>`;
   }
   
 }
+
+getQuestions(questionNum);

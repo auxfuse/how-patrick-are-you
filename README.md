@@ -28,7 +28,7 @@
 ## Welcome to our Hackathon Project: How Patrick are you?
 
 <p align="center">
-    <img src="" alt="logo">
+    <img src="/assets/images/logo-200x200.png" alt="logo">
 </p>
 
 ***
@@ -60,17 +60,21 @@ _Developer:_
 
 ##### 1. Font
 
+* Headings - Luckiest Guy
+* Body - Poppins
+
 
 ##### 2. Color Scheme
 
-* ![#1F1F1F](https://placehold.it/15/1F1F1F/000000?text=+) `#1F1F1F` - Primary color
-* ![#283618](https://placehold.it/15/283618/000000?text=+) `#283618` - Secondary color
-* ![#606C38](https://placehold.it/15/606C38/000000?text=+) `#606C38` - Tertiary color
-* ![#DED5BA](https://placehold.it/15/DED5BA/000000?text=+) `#DED5BA` - Supplementary color
-* ![#E6BB89](https://placehold.it/15/E6BB89/000000?text=+) `#E6BB89` - Supplementary color 2
-* ![#D4995E](https://placehold.it/15/D4995E/000000?text=+) `#D4995E` - Supplementary color 3
+* ![#2a3719](https://placehold.it/15/2a3719/000000?text=+) `#2a3719` - Primary color
+* ![#5f6c39](https://placehold.it/15/5f6c39/000000?text=+) `#5f6c39` - Secondary color
+* ![#ddd5ba](https://placehold.it/15/ddd5ba/000000?text=+) `#ddd5ba` - Tertiary color
+* ![#e04b32](https://placehold.it/15/e04b32/000000?text=+) `#e04b32` - Supplementary color
+* ![#cd8741](https://placehold.it/15/cd8741/000000?text=+) `#cd8741` - Supplementary color 2
 
 ##### 3. Logo
+
+<img src="/assets/images/logo-200x200.png" alt="logo">
 
 
 ##### 4. Geometry

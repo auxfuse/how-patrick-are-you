@@ -31,3 +31,8 @@ body {
 .navbar-item img {
     max-height: 4rem;
 }
+
+.navbar-burger {
+    margin-top: 1rem;
+    margin-right: 1rem;
+}

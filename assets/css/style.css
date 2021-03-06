@@ -1,10 +1,38 @@
-/* css */
+/* Global styles */
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+:root {
+    /* Color variables */
+    --primary-color: #2a3719;
+    --secondary-color: #5f6c39;
+    --teritary-color: #ddd5ba;
+    --supplementary-color-1: #e04b32;
+    --supplementary-color-2: #cd8741;
+
+    /* Typography variables */
+    --primary-font: 'Luckiest Guy', sans-serif;
+    --secondary-font: 'Poppins', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 body {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    min-height: 100vh;
     color: #1f1f1f;
     background: #ded5ba;
+}
+
+/* Navbar */
+
+.navbar-item img {
+    max-height: 4rem;
+}
+
+.navbar-burger {
+    margin-top: 1rem;
+    margin-right: 1rem;
 }

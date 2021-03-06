@@ -1,14 +1,23 @@
 import startFirebase from "./firebase.js";
 
-// function will return data exactly like quiz.json.
-// The function itself is async / a promise so make sure to implement 'await' or '.then()'
+let quizFormElement = document.getElementById("quiz-form");
+const resultsContainer = document.getElementById("resultsContainerNameHere");
+let questionNum = 0; // a global question number
+let usersTotalScore = 0;
+
+/**
+ * Gets and returns Quiz data
+ * 
+ * @returns {promise} result - Promise for the question object from Firebase
+ */
 async function get_data() {
   startFirebase();
+
   const db = firebase.firestore();
-
   let result = { questions: [] };
-
   const reference = await db.collection("questions-and-answers").get();
+
+  // Construct an object of the questions from response
   reference.docs.forEach((doc) => {
     let data = doc.data();
     result.questions.push({
@@ -18,17 +27,9 @@ async function get_data() {
       explained: data.explained,
     });
   });
-  console.log(result);
+
   return result;
 }
-
-get_data();
-
-const quizContainer = document.getElementById("quizContainerNameHere");
-let quizFormElement = document.getElementById("quiz-form");
-const resultsContainer = document.getElementById("resultsContainerNameHere");
-let questionNum = 0; // a global question number
-let usersTotalScore = 0;
 
 /**
  * Gets the quiz object and calls the quiz builder.
@@ -39,19 +40,18 @@ let usersTotalScore = 0;
  *
  * @param {Integer} questionNum - the global question index
  */
-function getQuestions(questionNum) {
-  fetch("/data/quiz.json")
-    .then((response) => response.json())
-    .then((data) => {
-      // get the length of the object
-      let limit = Object.keys(data.questions).length;
-      // if question num is still in range - build next question
-      if (questionNum < limit) {
-        questionBuilder(data.questions, questionNum);
-      } else {
-        callResults();
-      }
-    });
+function quizManager(questionNum) {
+  get_data().then((data) => {
+    console.log(typeof(data.questions));
+    // get the length of the object
+    let limit = Object.keys(data.questions).length;
+    // if question num is still in range - build next question
+    if (questionNum < limit) {
+      questionBuilder(data.questions, questionNum);
+    } else {
+      callResults();
+    }
+  })
 }
 
 /**
@@ -70,23 +70,21 @@ function questionBuilder(question, questionNumber) {
   // Here we setup the answers to the current question
   currentQuestion.answers.forEach((answer, answerNumber) => {
     possibleAnswers.push(
-      `<label>
+      `<p><label class="radio">
       <input type="radio" name="question${questionNumber}Answers" value="${answerNumber}">
       ${
         answerNumber + 1
-      } : // to have the displayed numbers 1 more than the array index
+      } :
       ${answer}
-      </label>`
+      </label></p>`
     );
   });
 
-  console.log(currentQuestion.question, possibleAnswers);
-
   // Setup the output that gets pushed to the template
   output.push(
-    `<div class="question"> ${currentQuestion.question} </div>
+    `<p class="question"> ${currentQuestion.question}</p>
     <div class="answers"> ${possibleAnswers.join("")} </div>
-    <button id="submitAnswer">Submit</button>`
+    <button class="button is-primary">Submit</button>`
   );
   output.push(`<h2>Please select an answer and click submit</h2>`);
   quizFormElement.innerHTML = output.join("");
@@ -99,7 +97,7 @@ function questionBuilder(question, questionNumber) {
  * **Checks the users answer and compares it to the correct answer**.
  *
  * * Calls the ***updateScores()*** function with the score.
- * * Or calls the ***getQuestions*** function to build the next question.
+ * * Or calls the ***quizManager*** function to build the next question.
  *
  * @param {Object} currentQuestion
  * @param {Integer} questionNumber
@@ -129,7 +127,7 @@ function checkUsersAnswer(currentQuestion, questionNumber) {
           } else {
             console.log("Thats not a match!");
             questionNum += 1;
-            getQuestions(questionNum);
+            quizManager(questionNum);
           }
         }
       }
@@ -141,7 +139,7 @@ function checkUsersAnswer(currentQuestion, questionNumber) {
  * **Updates the users score**.
  *
  * * Increments questionNum.
- * * Calls the ***getQuestions()*** function for the next question
+ * * Calls the ***quizManager()*** function for the next question
  *
  * @param {*} score
  * @param {*} status
@@ -151,7 +149,7 @@ function updateScore(score) {
 
   // call next Question
   questionNum += 1;
-  getQuestions(questionNum);
+  quizManager(questionNum);
 }
 
 /**
@@ -167,4 +165,4 @@ function callResults() {
   }
 }
 
-getQuestions(questionNum);
+quizManager(questionNum);

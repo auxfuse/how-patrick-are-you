@@ -8,8 +8,15 @@ const startFirebase = () => {
     appId: "1:376121652675:web:816232d840f0ba8bab7976",
     measurementId: "G-CYH1NCJ65C",
   };
+  // firebase.initializeApp(firebaseConfig);
 
-  firebase.initializeApp(firebaseConfig);
+  // Changed above to this below due to error when running quiz - seems to be ok - Check with Kenny
+  // Uncaught (in promise) FirebaseError: Firebase: No Firebase App '[DEFAULT]' has been created - call Firebase App.initializeApp() (app/no-app).
+  if (!firebase.apps.length) {
+    firebase.initializeApp(firebaseConfig);
+  }else {
+    firebase.app();
+  }
 };
 
 export default startFirebase;

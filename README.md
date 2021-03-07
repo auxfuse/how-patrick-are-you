@@ -82,6 +82,11 @@ _Developer:_
 
 ##### 5. Wireframing & Proposed/Implemented Functionality per Page
 
+<img src="/assets/images/wireframes/desktop_landing.png" alt="desktop landing page">
+<img src="/assets/images/wireframes/mobile_home.png" alt="mobile landing page">
+<img src="/assets/images/wireframes/quiz_.png" alt="quiz landing page">
+<img src="/assets/images/wireframes/results.png" alt="results page">
+
 
 [Back to Top](#table-of-contents)
 

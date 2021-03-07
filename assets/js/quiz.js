@@ -1,8 +1,9 @@
 import startFirebase from "./firebase.js";
 
 let quizFormElement = document.getElementById("quiz-form");
-const resultsContainer = document.getElementById("resultsContainerNameHere");
-let questionNum = 0; // a global question number
+const scoreComment = document.getElementById("score-comment");
+const scoreContainer = document.getElementById("score-container");
+let questionNum = 0;
 let usersTotalScore = 0;
 
 /**
@@ -102,10 +103,8 @@ function checkUsersAnswer(currentQuestion, questionNumber) {
 
           // Check if selection matches correct answer and call correct function
           if (selectedAnswer == correctAnswer) {
-            console.log("Thats a match!");
             updateScore(10);
           } else {
-            console.log("Thats not a match!");
             questionNum += 1;
             quizManager(questionNum);
           }
@@ -135,16 +134,28 @@ function updateScore(score) {
 
 
 /**
- * Handles displaying the results of the quiz.
+ * Handles displaying the results of the quiz inside a Modal
  */
 function callResults() {
+ 
+  document.querySelector(".modal").classList.toggle("is-active");
+  quizFormElement.innerHTML = `<a href="quiz.html" class="button is-primary mb-4">Would you like to try again?</a>`;
+
   if (usersTotalScore < 30) {
-    quizFormElement.innerHTML = `<h1>Terrible! St. Patrick?? You are like an Anti-Patrick - your score is ${usersTotalScore}% GoodBye</h1>`;
+    scoreContainer.innerHTML = `You are ${usersTotalScore}% St. Patrick`;
+    scoreComment.innerHTML = `<h1>Terrible! St. Patrick?? You are like an Anti-PatscoreComment</h1>`;
   } else if (usersTotalScore >= 30 && usersTotalScore < 60) {
-    quizFormElement.innerHTML = `<h1>Congratulations!! You compare to St. Patrick in the same way I compare to Brad Pitt! - your score is ${usersTotalScore}%</h1>`;
+    scoreContainer.innerHTML = `You are ${usersTotalScore}% St. Patrick`;
+    scoreComment.innerHTML = `<h1>Congratulations!! You compare to St. Patrick in the same way I compare to Brad Pitt!</h1>`;
   } else {
-    quizFormElement.innerHTML = `<h1>Heeelllo Saint Patrick! Alive and well you are looking!! Your score is ${usersTotalScore}%</h1>`;
+    scoreContainer.innerHTML = `You are ${usersTotalScore}% St. Patrick`;
+    scoreComment.innerHTML = `<h1>Heeelllo Saint Patrick! Alive and well you are looking!!</h1>`;
   }
+
+  // Placeholder JS that adds click event to disbale modal
+  document.querySelector(".delete").addEventListener("click", () => {
+    document.querySelector(".modal").classList.toggle("is-active");
+  });
 }
 
 

@@ -16,12 +16,16 @@ document.addEventListener("DOMContentLoaded", () => {
 // initiliazes the firebase app (firebase.js) so we can use the functions to access data
 startFirebase();
 
-// Placeholder JS that adds click event to enable modal
-document.querySelector(".toggle-modal").addEventListener("click", () => {
-  document.querySelector(".modal").classList.toggle("is-active");
-});
 
-// Placeholder JS that adds click event to disbale modal
-document.querySelector(".delete").addEventListener("click", () => {
-  document.querySelector(".modal").classList.toggle("is-active");
-});
+// Moved below code inside updateResult function in quiz.js, to handle modal
+// To be removed if unwanted
+
+// Placeholder JS that adds click event to enable modal
+// document.querySelector(".toggle-modal").addEventListener("click", () => {
+//   document.querySelector(".modal").classList.toggle("is-active");
+// });
+
+// // Placeholder JS that adds click event to disbale modal
+// document.querySelector(".delete").addEventListener("click", () => {
+//   document.querySelector(".modal").classList.toggle("is-active");
+// });

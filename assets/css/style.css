@@ -104,6 +104,11 @@ li {
   color: #a52a2a;
 }
 
+.shhh {
+  color: var(--teritary-color);
+  font-size: 2.8rem;
+}
+
 /* Quiz */
 
 #quiz-section {

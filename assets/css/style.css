@@ -136,3 +136,26 @@ li {
   background:var(--secondary-color);
   color: white;
 }
+
+
+/* Privacy */
+.priv-play {
+    background-color: #Faad60;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+    border: none;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: auto;
+    display: flex;
+    border-radius: 10px;
+    transition-duration: 0.4s;
+}
+
+.priv-play:hover {
+    background-color: #e04b32;
+    color: #fff;
+}

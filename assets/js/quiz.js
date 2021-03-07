@@ -1,6 +1,9 @@
 import startFirebase from "./firebase.js";
+import add_score_to_leaderboard from "./leaderboard.js";
 
 let quizFormElement = document.getElementById("quiz-form");
+const modalImage = document.getElementById("modal-image");
+const answerTitle = document.getElementById("answer-title");
 const scoreComment = document.getElementById("score-comment");
 const scoreContainer = document.getElementById("score-container");
 let questionNum = 0;
@@ -8,7 +11,7 @@ let usersTotalScore = 0;
 
 /**
  * Gets and returns Quiz data
- * 
+ *
  * @returns {promise} result - Promise for the question object from Firebase
  */
 async function get_data() {
@@ -57,7 +60,7 @@ function questionBuilder(question, questionNumber) {
 
   // Setup the output that gets pushed to the template
   output.push(
-    `<p class="questions"> Q${questionNumber+1} / 10: <p>
+    `<p class="questions"> Q${questionNumber + 1} / 10: <p>
     <p class="questions mb-4">${currentQuestion.question}</p>
     <ul class="answers">${possibleAnswers.join("")} </ul>
     <button class="button is-primary mb-4">Submit</button>`
@@ -67,7 +70,6 @@ function questionBuilder(question, questionNumber) {
   // Now we get the submitted answer
   checkUsersAnswer(currentQuestion, questionNumber);
 }
-
 
 /**
  * **Checks the users answer and compares it to the correct answer**.
@@ -109,7 +111,6 @@ function checkUsersAnswer(currentQuestion, questionNumber) {
   });
 }
 
-
 /**
  * **Updates the users score**.
  *
@@ -127,22 +128,31 @@ function updateScore(score) {
   quizManager(questionNum);
 }
 
-
 /**
  * Handles displaying the results of the quiz inside a Modal
  */
 function callResults() {
- 
   document.querySelector(".modal").classList.toggle("is-active");
   quizFormElement.innerHTML = `<a href="quiz.html" class="button is-primary mb-4">Would you like to try again?</a>`;
 
   if (usersTotalScore < 30) {
+    modalImage.src = `assets/images/sad.png`;
+    answerTitle.innerHTML = `Well.. you might want to look away`;
     scoreContainer.innerHTML = `You are ${usersTotalScore}% St. Patrick`;
-    scoreComment.innerHTML = `<h1>Terrible! St. Patrick?? You are like an Anti-PatscoreComment</h1>`;
+    scoreComment.innerHTML = `<h1>Terrible! St. Patrick?? You are like an Anti-Pat</h1>`;
   } else if (usersTotalScore >= 30 && usersTotalScore < 60) {
+    modalImage.src = `assets/images/unimpressed.png`;
+    answerTitle.innerHTML = `Not bad but not good either...`;
     scoreContainer.innerHTML = `You are ${usersTotalScore}% St. Patrick`;
-    scoreComment.innerHTML = `<h1>Congratulations!! You compare to St. Patrick in the same way I compare to Brad Pitt!</h1>`;
+    scoreComment.innerHTML = `<h1>You compare to St. Patrick in the same way I compare to Brad Pitt!</h1>`;
+  } else if (usersTotalScore >= 60 && usersTotalScore < 100) {
+    modalImage.src = `assets/images/happy.png`;
+    answerTitle.innerHTML = `Congratulations!`;
+    scoreContainer.innerHTML = `You are ${usersTotalScore}% St. Patrick`;
+    scoreComment.innerHTML = `<h1>You compare to St. Patrick in the same way I compare to Brad Pitt!</h1>`;
   } else {
+    modalImage.src = `assets/images/amazed.png`;
+    answerTitle.innerHTML = `Wow!`;
     scoreContainer.innerHTML = `You are ${usersTotalScore}% St. Patrick`;
     scoreComment.innerHTML = `<h1>Heeelllo Saint Patrick! Alive and well you are looking!!</h1>`;
   }
@@ -151,8 +161,17 @@ function callResults() {
   document.querySelector(".delete").addEventListener("click", () => {
     document.querySelector(".modal").classList.toggle("is-active");
   });
-}
 
+  // If User enters name and clicks 'Submit' - submit that score to the leaderboard
+  document.querySelector(".submit-score").addEventListener("click", (e) => {
+    let name = document.querySelector(".leaderboard-name");
+    add_score_to_leaderboard(name.value, usersTotalScore);
+    // submitted feedback for User & prevent further submissions
+    name.value = `Submitted`;
+    name.disabled = true;
+    e.target.style.display = "none";
+  });
+}
 
 /**
  * Gets the quiz object and calls the quiz builder.
@@ -163,9 +182,9 @@ function callResults() {
  *
  * @param {Integer} questionNum - the global question index
  */
- function quizManager(questionNum) {
+function quizManager(questionNum) {
   get_data().then((data) => {
-    console.log(typeof(data.questions));
+    console.log(typeof data.questions);
     // get the length of the object
     let limit = Object.keys(data.questions).length;
     // if question num is still in range - build next question
@@ -174,7 +193,7 @@ function callResults() {
     } else {
       callResults();
     }
-  })
+  });
 }
 
 quizManager(questionNum);

@@ -40,7 +40,6 @@ body {
 /* Leaderboard */
 
 .leaderboard-container {
-  height: 70vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -72,7 +71,7 @@ li {
 }
 
 .leaderboard-item {
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid var(--teritary-color);
 }
 
 /* Quiz */
@@ -88,7 +87,7 @@ li {
 .answers label {
   font-family: var(--secondary-font);
   font-size: 1.2rem;
-  cursor:pointer;
+  cursor: pointer;
   border-radius: 10px;
   background-color: white;
   width: 100%;
@@ -107,6 +106,6 @@ li {
 }
 
 .answers label:hover {
-  background:var(--secondary-color);
+  background: var(--secondary-color);
   color: white;
 }

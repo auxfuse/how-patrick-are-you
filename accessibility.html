@@ -14,10 +14,11 @@
       integrity="sha512-byErQdWdTqREz6DLAA9pCnLbdoGGhXfU6gm1c8bkf7F51JVmUBlayGe2A31VpXWQP+eiJ3ilTAZHCR3vmMyybA=="
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
     <link rel="stylesheet" href="assets/css/style.css" />
     <title>How Patrick are you?</title>
   </head>
-  <body>
+  <body class="main">
     <nav class="navbar has-shadow is-white">
       <div class="navbar-brand">
         <a href="index.html" class="navbar-item">
@@ -48,7 +49,7 @@
       </div>
     </nav>
 
-    <div class="container">
+    <div class="container section">
       <div class="media">
         <figure class="media-left">
           <p class="image is-64x64">
@@ -77,8 +78,34 @@
       </div>
     </div>
 
+    <footer class="footer">
+      <div class="columns">
+        <div class="column">
+          <p class="has-text-centered"><a href="privacy-policy.html">Privacy Policy</a></p>
+        </div>
+        <div class="column">
+          <p class="has-text-centered social-links">
+            <a target="_blank" rel="noopener" href="https://www.facebook.com/">
+              <i class="fab fa-facebook" aria-hidden="true"></i>
+              <span class="sr-only">Facebook</span>
+            </a>
+            <a target="_blank" rel="noopener" href="https://www.instagram.com/">
+              <i class="fab fa-instagram" aria-hidden="true"></i>
+              <span class="sr-only">Instagram</span>
+            </a>
+            <a target="_blank" rel="noopener" href="mailto:someone@example.com">
+              <i class="fas fa-envelope" aria-hidden="true"></i>
+              <span class="sr-only">Email</span>
+            </a>
+          </p>
+        </div>
+        <div class="column">
+          <p class="has-text-centered"><a href="accessibility.html" class="active">Accessibility</a></p>
+        </div>
+      </div>
+    </footer>
+
     <script src="assets/js/main.js" type="module" defer></script>
-    <script src="assets/js/egg.js" defer></script>
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.2.10/firebase-app.min.js"

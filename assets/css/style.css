@@ -26,6 +26,10 @@ body {
   background: #ded5ba;
 }
 
+a {
+    color: #4a4a4a;
+}
+
 /* Navbar */
 
 .navbar-item img {
@@ -101,6 +105,28 @@ li {
   display: none;
 }
 
+/* Footer */
+
+.main {
+  display: flex;
+  flex-direction: column;
+}
+
+.section {
+  flex: 1;
+}
+
+.footer {
+  padding: 2rem 1.5rem;
+}
+
+.social-links {
+    font-size: 1.2rem;
+}
+
+.social-links a {
+    padding: 0 1.2rem;
+}
 .answers input[type="radio"]:checked + label {
   background: var(--primary-color);
   color: var(--supplementary-color-2);

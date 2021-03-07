@@ -35,8 +35,8 @@ async function populate_leaderboard() {
     if (sorted_leaderboard_data[index]) {
       list_item.innerHTML = `
       <p>${index + 1}.<p>
-        <h4>${sorted_leaderboard_data[index].name}</h4>
-        <p>Score: ${sorted_leaderboard_data[index].score}<p>`;
+      <h4>${sorted_leaderboard_data[index].name}</h4>
+      <p>Score: ${sorted_leaderboard_data[index].score}<p>`;
       list_item.classList.add("leaderboard-item");
     } else {
       break;
@@ -53,3 +53,5 @@ async function add_score_to_leaderboard(name, score) {
 }
 
 populate_leaderboard();
+
+export default add_score_to_leaderboard;

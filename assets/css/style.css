@@ -89,8 +89,20 @@ li {
   font-family: var(--primary-font);
 }
 
-.answers {
+.answers label {
   font-family: var(--secondary-font);
+  font-size: 1.2rem;
+  cursor:pointer;
+  border-radius: 10px;
+  background-color: white;
+  width: 100%;
+  padding: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.answers input[type="radio"] {
+  display: none;
 }
 
 /* Footer */
@@ -114,4 +126,13 @@ li {
 
 .social-links a {
     padding: 0 1.2rem;
+}
+.answers input[type="radio"]:checked + label {
+  background: var(--primary-color);
+  color: var(--supplementary-color-2);
+}
+
+.answers label:hover {
+  background:var(--secondary-color);
+  color: white;
 }

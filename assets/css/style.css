@@ -53,7 +53,8 @@ a {
 }
 
 .leaderboard {
-  width: 50vw;
+  min-width: 50vw;
+  max-width: 90vw;
   background: white;
   padding: 30px;
   border-radius: 10px;
@@ -67,11 +68,17 @@ ol {
   gap: 1rem;
 }
 
+.content ol {
+  margin-left: 0;
+  margin-top: 0;
+}
+
 li {
   padding: 5px;
   display: flex;
   gap: 1rem;
   list-style-position: inside;
+  white-space: normal;
 }
 
 .leaderboard-item {

@@ -26,6 +26,10 @@ body {
   background: #ded5ba;
 }
 
+a {
+    color: #4a4a4a;
+}
+
 /* Navbar */
 
 .navbar-item img {
@@ -87,4 +91,27 @@ li {
 
 .answers {
   font-family: var(--secondary-font);
+}
+
+/* Footer */
+
+.main {
+  display: flex;
+  flex-direction: column;
+}
+
+.section {
+  flex: 1;
+}
+
+.footer {
+  padding: 2rem 1.5rem 2rem;
+}
+
+.social-links {
+    font-size: 1.2rem;
+}
+
+.social-links a {
+    padding: 0 1.2rem;
 }

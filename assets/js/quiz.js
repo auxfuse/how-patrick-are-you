@@ -60,10 +60,12 @@ function questionBuilder(question, questionNumber) {
 
   // Setup the output that gets pushed to the template
   output.push(
-    `<p class="questions"> Q${questionNumber + 1} / 10: <p>
-    <p class="questions mb-4">${currentQuestion.question}</p>
+    `<p class="questions is-size-4"> Q${questionNumber + 1} / 10: <p>
+    <p class="questions mb-4 is-size-5">${currentQuestion.question}</p>
     <ul class="answers">${possibleAnswers.join("")} </ul>
-    <button class="button is-primary mb-4">Submit</button>`
+    <div class="columns mt-4">
+      <button class="column is-half is-offset-one-quarter button is-primary is large mb-4 is-size-4 has-text-weight-bold">Submit</button>
+    </div>`
   );
   quizFormElement.innerHTML = output.join("");
 
@@ -130,6 +132,7 @@ function updateScore(score) {
 
 /**
  * Handles displaying the results of the quiz inside a Modal
+ * * Handles the submitting of user name and score to Firebase
  */
 function callResults() {
   document.querySelector(".modal").classList.toggle("is-active");

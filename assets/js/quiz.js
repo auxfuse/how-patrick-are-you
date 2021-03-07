@@ -48,13 +48,10 @@ function questionBuilder(question, questionNumber) {
   // Here we setup the answers to the current question
   currentQuestion.answers.forEach((answer, answerNumber) => {
     possibleAnswers.push(
-      `<p><label class="radio">
-      <input type="radio" name="question${questionNumber}Answers" value="${answerNumber}">
-      ${
-        answerNumber + 1
-      } :
-      ${answer}
-      </label></p>`
+      `<li>
+        <input type="radio" id="${answerNumber}" name="question${questionNumber}Answers" value="${answerNumber}">
+        <label for="${answerNumber}">${answer}</label>
+      </li>`
     );
   });
 
@@ -62,10 +59,8 @@ function questionBuilder(question, questionNumber) {
   output.push(
     `<p class="questions"> Q${questionNumber+1} / 10: <p>
     <p class="questions mb-4">${currentQuestion.question}</p>
-    <div class="answers mb-4"> ${possibleAnswers.join("")} </div>
-    <button class="button is-primary mb-4">Submit</button>
-    <p class="answers">Please select an answer and click submit</p>
-    `
+    <ul class="answers">${possibleAnswers.join("")} </ul>
+    <button class="button is-primary mb-4">Submit</button>`
   );
   quizFormElement.innerHTML = output.join("");
 

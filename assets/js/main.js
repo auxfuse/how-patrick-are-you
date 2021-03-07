@@ -16,7 +16,6 @@ document.addEventListener("DOMContentLoaded", () => {
 // initiliazes the firebase app (firebase.js) so we can use the functions to access data
 startFirebase();
 
-
 // Moved below code inside updateResult function in quiz.js, to handle modal
 // To be removed if unwanted
 

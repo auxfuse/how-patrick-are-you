@@ -33,14 +33,32 @@ async function populate_leaderboard() {
 
   for (const [index, list_item] of list_items.entries()) {
     if (sorted_leaderboard_data[index]) {
-      list_item.innerHTML = `
-      <p>${index + 1}.<p>
+      if (index === 0) {
+        list_item.innerHTML = `
+        <i class="fas fa-medal" id="gold-medal"></i>
       <h4>${sorted_leaderboard_data[index].name}</h4>
-      <p>Score: ${sorted_leaderboard_data[index].score}<p>`;
-      list_item.classList.add("leaderboard-item");
+      <p>${sorted_leaderboard_data[index].score}%</p>`;
+        list_item.classList.add("leaderboard-item");
+      } else if (index === 1) {
+        list_item.innerHTML = `
+        <i class="fas fa-medal" id="silver-medal"></i>
+      <h4>${sorted_leaderboard_data[index].name}</h4>
+      <p>${sorted_leaderboard_data[index].score}%</p>`;
+      } else if (index === 2) {
+        list_item.innerHTML = `
+        <i class="fas fa-medal" id="bronze-medal"></i>
+      <h4>${sorted_leaderboard_data[index].name}</h4>
+      <p>${sorted_leaderboard_data[index].score}%</p>`;
+      } else {
+        list_item.innerHTML = `
+        <p>${index + 1}.</p>
+      <h4>${sorted_leaderboard_data[index].name}</h4>
+      <p>${sorted_leaderboard_data[index].score}%</p>`;
+      }
     } else {
       break;
     }
+    list_item.classList.add("leaderboard-item");
   }
 }
 

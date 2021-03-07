@@ -76,19 +76,44 @@ ol {
 li {
   padding: 5px;
   display: flex;
+  justify-content: space-between;
+  align-items: center;
   gap: 1rem;
   list-style-position: inside;
   white-space: normal;
+}
+
+.leaderboard-heading {
+  display: flex;
+  justify-content: space-between;
 }
 
 .leaderboard-item {
   border-bottom: 1px solid var(--teritary-color);
 }
 
+#gold-medal {
+  color: #daa520;
+}
+
+#silver-medal {
+  color: #c0c0c0;
+}
+
+#bronze-medal {
+  color: #a52a2a;
+}
+
+.shhh {
+  color: var(--teritary-color);
+  font-size: 2.8rem;
+}
+
 /* Quiz */
 
 #quiz-section {
   width: 50%;
+  margin-bottom: 100px;
 }
 
 .questions {
@@ -103,7 +128,7 @@ li {
   background-color: white;
   width: 100%;
   padding: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   text-align: center;
 }
 

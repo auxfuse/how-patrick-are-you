@@ -76,21 +76,32 @@ ol {
 li {
   padding: 5px;
   display: flex;
+  justify-content: space-between;
+  align-items: center;
   gap: 1rem;
   list-style-position: inside;
   white-space: normal;
+}
+
+.leaderboard-heading {
+  display: flex;
+  justify-content: space-between;
 }
 
 .leaderboard-item {
   border-bottom: 1px solid var(--teritary-color);
 }
 
-.shhh {
-  position: absolute;
-  left: 0;
-  top: 120px;
-  font-size: 3rem;
-  color: var(--teritary-color);
+#gold-medal {
+  color: #daa520;
+}
+
+#silver-medal {
+  color: #c0c0c0;
+}
+
+#bronze-medal {
+  color: #a52a2a;
 }
 
 /* Quiz */

@@ -85,6 +85,14 @@ li {
   border-bottom: 1px solid var(--teritary-color);
 }
 
+.shhh {
+  position: absolute;
+  left: 0;
+  top: 120px;
+  font-size: 3rem;
+  color: var(--teritary-color);
+}
+
 /* Quiz */
 
 #quiz-section {

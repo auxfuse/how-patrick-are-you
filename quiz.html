@@ -76,6 +76,43 @@
         </div>
     </section>
 
+    <section>
+      <!-- Modal that shows Results-->
+      <div class="modal">
+        <div class="modal-background"></div>
+        <div class="modal-card">
+          <header class="modal-card-head">
+            <p class="modal-card-title">Results</p>
+            <button class="delete" aria-label="close"></button>
+          </header>
+          <section class="modal-card-body">
+            <!-- Content ... -->
+            <div class="columns">
+              <div class="column">
+                <img src="assets/images/happy.png" alt="happy" />
+              </div>
+              <div class="column">
+                <h2 class="title is-6">Congratulations { insert name }!</h2>
+                <br />
+                <h2 id="score-container" class="subtitle is-6">{ score inserted }</h2>
+                <br />
+                <h2 id="score-comment" class="subtitle is-6">
+                  { Score comment inserted here }
+                </h2>
+              </div>
+            </div>
+          </section>
+
+          <footer class="modal-card-foot">
+            <button class="button is-success">View Leaderboard</button>
+            <button class="button">Share</button>
+          </footer>
+        </div>
+      </div>
+    </section>
+
+    
+
     <script src="assets/js/firebase.js" type="module" defer></script>
     <script src="assets/js/quiz.js" type="module" defer></script>
     <!-- The core Firebase JS SDK is always required and must be listed first -->

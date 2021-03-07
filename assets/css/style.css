@@ -27,7 +27,7 @@ body {
 }
 
 a {
-    color: #4a4a4a;
+  color: #4a4a4a;
 }
 
 /* Navbar */
@@ -53,7 +53,7 @@ a {
 }
 
 .leaderboard {
-  width: 80%;
+  width: 50vw;
   background: white;
   padding: 30px;
   border-radius: 10px;
@@ -120,11 +120,11 @@ li {
 }
 
 .social-links {
-    font-size: 1.2rem;
+  font-size: 1.2rem;
 }
 
 .social-links a {
-    padding: 0 1.2rem;
+  padding: 0 1.2rem;
 }
 .answers input[type="radio"]:checked + label {
   background: var(--primary-color);
@@ -135,29 +135,25 @@ li {
   background: var(--secondary-color);
   color: white;
 }
-<<<<<<< HEAD
-=======
-
 
 /* Privacy */
 .priv-play {
-    background-color: #Faad60;
-    color: #fff;
-    font-size: 20px;
-    font-weight: 500;
-    border: none;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    margin: auto;
-    display: flex;
-    border-radius: 10px;
-    transition-duration: 0.4s;
+  background-color: #faad60;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 500;
+  border: none;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: auto;
+  display: flex;
+  border-radius: 10px;
+  transition-duration: 0.4s;
 }
 
 .priv-play:hover {
-    background-color: #e04b32;
-    color: #fff;
+  background-color: #e04b32;
+  color: #fff;
 }
->>>>>>> 98ec3abc8b50bbf70219928a80c397eaee01359f

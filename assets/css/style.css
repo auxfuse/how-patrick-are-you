@@ -165,7 +165,17 @@ li {
   color: #fff;
 }
 
-/* 500 */
+/* 404/500 pages */
+
+#bg-alt-color {
+  background: #000000;
+}
+
+.centering {
+  display: flex;
+  align-items: center;
+}
+
 .error-desc {
   font-family: 'Poppins', sans-serif;
   display: flex;
@@ -174,8 +184,9 @@ li {
   color: var(--teritary-color);
 }
 
-#bg-alt-color {
-  background: #000000;
+.error-img {
+  display: block;
+  margin: 0 auto;
 }
 
 .border-left {

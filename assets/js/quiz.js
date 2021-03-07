@@ -32,29 +32,6 @@ async function get_data() {
 }
 
 /**
- * Gets the quiz object and calls the quiz builder.
- * * The questionNum is compared against the length of the object
- *
- * * Calls the ***questionBuilder()*** function with the next question.
- * * Or calls the ***getResults()*** function.
- *
- * @param {Integer} questionNum - the global question index
- */
-function quizManager(questionNum) {
-  get_data().then((data) => {
-    console.log(typeof(data.questions));
-    // get the length of the object
-    let limit = Object.keys(data.questions).length;
-    // if question num is still in range - build next question
-    if (questionNum < limit) {
-      questionBuilder(data.questions, questionNum);
-    } else {
-      callResults();
-    }
-  })
-}
-
-/**
  * **Builds the current question and possible answers into an output array.**
  * * Output gets inserted into the template
  * * Calls the ***checkUsersAnswers()*** function
@@ -82,16 +59,19 @@ function questionBuilder(question, questionNumber) {
 
   // Setup the output that gets pushed to the template
   output.push(
-    `<p class="question"> ${currentQuestion.question}</p>
-    <div class="answers"> ${possibleAnswers.join("")} </div>
-    <button class="button is-primary">Submit</button>`
+    `<p class="questions"> Q${questionNumber+1} / 10: <p>
+    <p class="questions mb-4">${currentQuestion.question}</p>
+    <div class="answers mb-4"> ${possibleAnswers.join("")} </div>
+    <button class="button is-primary mb-4">Submit</button>
+    <p class="answers">Please select an answer and click submit</p>
+    `
   );
-  output.push(`<h2>Please select an answer and click submit</h2>`);
   quizFormElement.innerHTML = output.join("");
 
   // Now we get the submitted answer
   checkUsersAnswer(currentQuestion, questionNumber);
 }
+
 
 /**
  * **Checks the users answer and compares it to the correct answer**.
@@ -135,6 +115,7 @@ function checkUsersAnswer(currentQuestion, questionNumber) {
   });
 }
 
+
 /**
  * **Updates the users score**.
  *
@@ -152,6 +133,7 @@ function updateScore(score) {
   quizManager(questionNum);
 }
 
+
 /**
  * Handles displaying the results of the quiz.
  */
@@ -163,6 +145,30 @@ function callResults() {
   } else {
     quizFormElement.innerHTML = `<h1>Heeelllo Saint Patrick! Alive and well you are looking!! Your score is ${usersTotalScore}%</h1>`;
   }
+}
+
+
+/**
+ * Gets the quiz object and calls the quiz builder.
+ * * The questionNum is compared against the length of the object
+ *
+ * * Calls the ***questionBuilder()*** function with the next question.
+ * * Or calls the ***getResults()*** function.
+ *
+ * @param {Integer} questionNum - the global question index
+ */
+ function quizManager(questionNum) {
+  get_data().then((data) => {
+    console.log(typeof(data.questions));
+    // get the length of the object
+    let limit = Object.keys(data.questions).length;
+    // if question num is still in range - build next question
+    if (questionNum < limit) {
+      questionBuilder(data.questions, questionNum);
+    } else {
+      callResults();
+    }
+  })
 }
 
 quizManager(questionNum);

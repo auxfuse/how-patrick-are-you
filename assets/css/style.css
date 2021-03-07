@@ -93,15 +93,15 @@ li {
 }
 
 #gold-medal {
-  color: goldenrod;
+  color: #daa520;
 }
 
 #silver-medal {
-  color: silver;
+  color: #c0c0c0;
 }
 
 #bronze-medal {
-  color: brown;
+  color: #a52a2a;
 }
 
 /* Quiz */

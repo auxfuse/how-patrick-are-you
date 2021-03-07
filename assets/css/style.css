@@ -113,6 +113,7 @@ li {
 
 #quiz-section {
   width: 50%;
+  margin-bottom: 100px;
 }
 
 .questions {
@@ -127,7 +128,7 @@ li {
   background-color: white;
   width: 100%;
   padding: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   text-align: center;
 }
 

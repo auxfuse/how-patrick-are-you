@@ -164,3 +164,21 @@ li {
   background-color: #e04b32;
   color: #fff;
 }
+
+/* 500 */
+.error-desc {
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: var(--teritary-color);
+}
+
+#bg-alt-color {
+  background: #000000;
+}
+
+.border-left {
+  border-left: 3px solid #ffffff;
+  stroke-linecap: round;
+}

@@ -74,3 +74,17 @@ li {
 .leaderboard-item {
   border-bottom: 1px solid black;
 }
+
+/* Quiz */
+
+#quiz-section {
+  width: 50%;
+}
+
+.questions {
+  font-family: var(--primary-font);
+}
+
+.answers {
+  font-family: var(--secondary-font);
+}

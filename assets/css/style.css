@@ -66,6 +66,7 @@ a {
   font-size: 3rem;
   color: silver;
   box-shadow: 2px 2px 4px 4px #555555;
+  cursor: pointer;
 }
 
 .dropdown-menu {
@@ -93,6 +94,32 @@ a {
   font-size: 1.2rem;
   color: white;
   padding-left: 20px;
+}
+
+/* Call to acction */
+
+.cta-container {
+  margin-top: 5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.cta-button {
+  text-align: center;
+  padding-top: 50px;
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  font-size: 2rem;
+  font-family: var(--primary-font);
+  background-color: var(--supplementary-color-2);
+  border: none;
+  box-shadow: 2px 2px 4px 4px #555555;
+  cursor: pointer;
+}
+
+.cta-button:hover {
+  color: var(--supplementary-color-1)
 }
 
 /* Leaderboard */

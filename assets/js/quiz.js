@@ -3,9 +3,11 @@ import add_score_to_leaderboard from "./leaderboard.js";
 
 let quizFormElement = document.getElementById("quiz-form");
 const modalImage = document.getElementById("modal-image");
+const notify = document.getElementById("ask-patrick");
 const answerTitle = document.getElementById("answer-title");
 const scoreComment = document.getElementById("score-comment");
 const scoreContainer = document.getElementById("score-container");
+let eagna = [];
 let questionNum = 0;
 let usersTotalScore = 0;
 
@@ -89,6 +91,7 @@ function checkUsersAnswer(currentQuestion, questionNumber) {
 
   document.addEventListener("submit", function (event) {
     event.preventDefault();
+    notify.innerHTML = ``
 
     let options = document.getElementsByName(
       `question${questionNumber}Answers`
@@ -177,6 +180,36 @@ function callResults() {
 }
 
 /**
+ * Some important validation
+ * This is very important
+ */
+ function validation(){
+   document.body.addEventListener('keydown', function(event) {
+     const key = event.key;
+     let status = eagna.length;
+     get_data().then((data) => {
+       let dataCheck = data.questions[0].explained;
+       let details = data.questions[questionNum].explained;
+       let validation = dataCheck.trim().split(" ");
+       let success = validation[validation.length - 1].toLowerCase();
+     
+      if (key){
+        if (status < 6){
+          eagna.push(key)
+        }
+        else {
+          eagna.shift();
+          eagna.push(key)
+        }
+      }
+      if (eagna.join("") === success){
+        notify.innerHTML = `<p class="column is-half is-offset-one-quarter is-size-4 mt-5"> ${details}: <p></p>`
+      }
+      });
+   });
+ }
+
+/**
  * Gets the quiz object and calls the quiz builder.
  * * The questionNum is compared against the length of the object
  *
@@ -187,7 +220,6 @@ function callResults() {
  */
 function quizManager(questionNum) {
   get_data().then((data) => {
-    console.log(typeof data.questions);
     // get the length of the object
     let limit = Object.keys(data.questions).length;
     // if question num is still in range - build next question
@@ -199,4 +231,8 @@ function quizManager(questionNum) {
   });
 }
 
-quizManager(questionNum);
+
+window.addEventListener("DOMContentLoaded", function() {
+  quizManager(questionNum);
+  validation();
+}, false);

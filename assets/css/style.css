@@ -260,7 +260,14 @@ li {
 /* Quiz */
 
 #quiz-section {
+<<<<<<< HEAD
   margin: 1rem auto;
+=======
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem;
+>>>>>>> 4d6b468519b45a0b8c99172a81265c4c94dd50f2
 }
 
 .questions {

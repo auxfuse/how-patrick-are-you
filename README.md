@@ -102,6 +102,8 @@ Our color scheme is inspired by St.Patrick's day and muted tones. Allowing for c
 
 ##### 3. Logo
 
+Logo and mascot were created in Illustrator. The font "Luckiest Guy` was used along with a palette of greens and oranges in keeping with the theme of St. Patricks day. 'Seamus' the shamrock was created as an additional asset to be included in quiz feedback.
+
 <p align="center">
     <img src="/assets/images/logo-200x200.png" alt="logo">
 </p>

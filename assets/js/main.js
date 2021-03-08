@@ -8,4 +8,9 @@ document.addEventListener("DOMContentLoaded", () => {
     navLinks.classList.toggle("is-active");
     burgerIcon.classList.toggle("is-active");
   });
+
+  // Adds click event to disbale modal
+  document.querySelector(".how-button").addEventListener("click", () => {
+    document.querySelector(".dropdown").classList.toggle("is-active");
+  });
 });

@@ -190,6 +190,18 @@ li {
   color: #fff;
 }
 
+/* Seamus says egg */
+    .secret-message {
+        position: relative;
+        padding: 5px;
+    }
+    .secret-message .img-top {
+        display: none;
+    }
+    .secret-message:hover .img-top {
+        display: inline;
+    }
+    
 /* 404/500 pages */
 
 #bg-alt-color {

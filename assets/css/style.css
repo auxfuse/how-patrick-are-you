@@ -190,7 +190,6 @@ li {
   color: #fff;
 }
 
-<<<<<<< HEAD
 /* Seamus says egg */
     .secret-message {
         position: relative;
@@ -202,7 +201,7 @@ li {
     .secret-message:hover .img-top {
         display: inline;
     }
-=======
+    
 /* 404/500 pages */
 
 #bg-alt-color {
@@ -231,4 +230,3 @@ li {
   border-left: 3px solid #ffffff;
   stroke-linecap: round;
 }
->>>>>>> eb64cef7f969e8fe3bae896cffc68f2dcc7095f6

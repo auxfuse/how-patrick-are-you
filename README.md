@@ -17,6 +17,15 @@
 - [Database](#database)
 - [Features](#features)
   - [Future Features](#future-features)
+  - [Common styling](#common-styling)
+    * [Navbar](#navbar)
+    * [Footer](#footer)
+  - [Home page](#home-page)
+  - [Quiz](#quiz)
+  - [Leaderboard](#leaderboard)
+  - [Accessability](#accessability)
+  - [Privacy policy](#privacy-policy)
+
 - [Testing](#testing)
   - [Found Bugs & Fixes](#found-bugs--fixes)
 - [Deployment](#deployment)
@@ -236,6 +245,68 @@ The core features of the Web App are:
 - Results Modal after Quiz allows you to submit your score to Leaderboard
 - Leaderboard displays all scores by users, ordered by score
 - Various Easter Eggs planted around the site
+
+### Common styling
+
+Responsive pages containing a site common navbar and footer.   
+
+#### Navbar
+
+**Contains:**
+
++ site logo as home link.
++ links to Home, the quiz and the leaderboard.
+
+The navbar collapses at the Tablet scren size, condensing the menu options into a dropdown menu.
+
+#### Footer
+
+**Contains:**
+
++ Link to privacy policy
++ Social media links
++ Link to Accessibility
+
+### Home page
+
+**Contains:**
+
++ A styled responsive banner image.
++ A How to play dropdown instructions meny - with common site styling.
++ A call to action button to begin the quiz.
+
+### Quiz
+
+**Contains:**
+
++ A list of 10 questions to judge how like st. Patrick you are.
++ The questions are supplied to the user one-by-one, as the user clicks and submits his answer.
++ The scores are then calculated and the user is given a result.
++ The user is then able to enter their name and add their score to a leaderboard.
++ oh and theres that thing.
+
+### Leaderboard
+
+**Contains:**
+
++ A list of the top 10 people who played the quiz.
++ The data is provided via Firebase.
+
+### Accessability
+
+**Contains:**
+
++ Accessability details.
+
+
+### Privacy policy
+
+**Contains:**
+
++ Privacy policy details.
+
+[Back to Top](#table-of-contents)
+
 
 #### Future Features:
 

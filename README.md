@@ -282,6 +282,7 @@ The navbar collapses at the Tablet scren size, condensing the menu options into 
 
 + Accessability details.
 
+
 ### Privacy policy
 
 **Contains:**

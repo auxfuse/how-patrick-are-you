@@ -30,8 +30,10 @@ a {
   color: #4a4a4a;
 }
 
-input, button, a {
-    -webkit-tap-highlight-color: transparent;
+input,
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
 }
 
 /* Navbar */
@@ -82,7 +84,7 @@ input, button, a {
 }
 
 .how-button:focus {
-    outline: none;
+  outline: none;
 }
 
 .dropdown-content {
@@ -95,7 +97,7 @@ input, button, a {
   font-family: var(--primary-font);
   font-size: 1.2rem;
   text-align: center;
-  color: var(--teritary-color)
+  color: var(--teritary-color);
 }
 
 .dropdown-item ul {
@@ -129,25 +131,25 @@ input, button, a {
 }
 
 .cta-button:hover {
-  color: var(--supplementary-color-1)
+  color: var(--supplementary-color-1);
 }
 
 .instructions {
-    list-style-type: none;
+  list-style-type: none;
 }
 
 .instruction-list-item {
-    justify-content: normal;
+  justify-content: normal;
 }
 
 .instruction-list-item::before {
-    content: '';
-    display: inline-block;
-    min-height: 25px;
-    min-width: 25px;
-    background-image: url("../images/happy.png");
-    background-size: contain;
-    background-repeat: no-repeat;
+  content: "";
+  display: inline-block;
+  min-height: 25px;
+  min-width: 25px;
+  background-image: url("../images/happy.png");
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 /* Leaderboard */
@@ -221,12 +223,7 @@ li {
 /* Quiz */
 
 #quiz-section {
-<<<<<<< HEAD
-  width: 50%;
-  margin-bottom: 100px;
-=======
-    margin: 1rem auto;
->>>>>>> b12d7600f92125d3d8b847f0c91c91b40536422f
+  margin: 1rem auto;
 }
 
 .questions {
@@ -251,7 +248,7 @@ li {
 .quiz-button {
   margin-top: 3rem;
   border: none;
-  width:100%;
+  width: 100%;
   padding: 20px;
   border-radius: 10px;
   background-color: var(--secondary-color);
@@ -385,8 +382,8 @@ ul .accessibility-list-item::before {
 /* Media Queries */
 
 @media (min-width: 769px) {
-    #quiz-section {
-        width: 70%;
-        margin: 1rem auto;
-    }
+  #quiz-section {
+    width: 70%;
+    margin: 1rem auto;
+  }
 }

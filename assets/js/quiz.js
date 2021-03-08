@@ -65,9 +65,7 @@ function questionBuilder(question, questionNumber) {
     `<p class="questions is-size-4"> Q${questionNumber + 1} / 10: <p>
     <p class="questions mb-4 is-size-5">${currentQuestion.question}</p>
     <ul class="answers">${possibleAnswers.join("")} </ul>
-    <div class="columns mt-4">
-      <button class="column is-half is-offset-one-quarter button is-primary is large mb-4 is-size-4 has-text-weight-bold">Submit</button>
-    </div>`
+    <button class="quiz-button button is-fullwidth">Submit</button>`
   );
   quizFormElement.innerHTML = output.join("");
 
@@ -163,7 +161,7 @@ function callResults() {
     scoreComment.innerHTML = `<h1>Heeelllo Saint Patrick! Alive and well you are looking!!</h1>`;
   }
 
-  // Placeholder JS that adds click event to disbale modal
+  // Adds click event to disbale modal
   document.querySelector(".delete").addEventListener("click", () => {
     document.querySelector(".modal").classList.toggle("is-active");
   });

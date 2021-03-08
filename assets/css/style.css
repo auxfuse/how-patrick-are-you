@@ -382,11 +382,11 @@ ul .accessibility-list-item::before {
 }
 
 .secret-message .img-top {
-  display: none;
+  visibility: hidden
 }
 
 .secret-message:hover .img-top {
-  display: inline;
+  visibility: visible;
 }
 
 /* 404/500 pages */

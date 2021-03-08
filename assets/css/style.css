@@ -221,8 +221,7 @@ li {
 /* Quiz */
 
 #quiz-section {
-    width: 50%;
-    margin-bottom: 100px;
+    margin: 1rem auto;
 }
 
 .questions {
@@ -376,4 +375,13 @@ ul .accessibility-list-item::before {
 .border-left {
     border-left: 3px solid #ffffff;
     stroke-linecap: round;
+}
+
+/* Media Queries */
+
+@media (min-width: 769px) {
+    #quiz-section {
+        width: 70%;
+        margin: 1rem auto;
+    }
 }

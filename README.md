@@ -28,7 +28,7 @@
 ## Welcome to our Hackathon Project: How Patrick are you?
 
 <p align="center">
-    <img src="/assets/images/logo-500x500.png" alt="logo">
+    <img src="/assets/images/logo-alt.png" alt="logo">
 </p>
 
 ---
@@ -99,7 +99,9 @@ Our color scheme is inspired by St.Patrick's day and muted tones. Allowing for c
 
 ##### 3. Logo
 
-<img src="/assets/images/logo-500x500.png" alt="logo">
+<p align="center">
+    <img src="/assets/images/logo-200x200.png" alt="logo">
+</p>
 
 ##### 4. Wireframing & Proposed/Implemented Functionality per Page
 
@@ -142,7 +144,12 @@ Wireframes for this project were created using Sketch, for small and large viewp
 * Autoprefixer CSS Online ~ Used to check for possible webkits required in the applications stylesheet ensuring Cross-browser support.
 * Font Awesome Icons ~ For iconography not custom to the site.
 * Sketch ~ Used to create the wireframes.
+* Illustrator ~ Used to create the custom logos and icons.
 * tinypng.com ~ Used to compress images used throughout the site without affecting image integrity/quality.
+
+<p align="center">
+    <img src="/assets/images/logo-alt2.png" alt="logo">
+</p>
 
 ## Database
 
@@ -265,5 +272,5 @@ This project and the workings of this project was an incredible experience. I tr
 [Back to Top](#table-of-contents)
 
 <p align="center">
-    <img src="assets/images/logo-500x500.png" alt="logo">
+    <img src="assets/images/logo-alt3.png" alt="logo alternative">
 </p>

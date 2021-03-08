@@ -108,6 +108,43 @@ a {
   padding-left: 20px;
 }
 
+.landing-image {
+  width: 100vw;
+  height: 35vh;
+  background: url("../images/stpat-2.jpg");
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.landing-image h1 {
+  font-size: 5rem;
+  color: var(--teritary-color);
+  text-shadow: 2px 7px 5px rgba(0, 0, 0, 0.3),
+    0px -4px 10px rgba(255, 255, 255, 0.3);
+  font-style: italic;
+}
+
+.landing-info {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.landing-info h2 {
+  font-weight: 600;
+  font-size: 1.2rem;
+  font-style: ;
+}
+
+.landing-info p {
+  margin-top: 10px;
+  text-align: center;
+  width: 80%;
+}
+
 /* Call to acction */
 
 .cta-container {
@@ -388,5 +425,17 @@ ul .accessibility-list-item::before {
   #quiz-section {
     width: 70%;
     margin: 1rem auto;
+  }
+}
+
+@media (max-width: 769px) {
+  .landing-image h1 {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 450px) {
+  .landing-image h1 {
+    font-size: 2rem;
   }
 }
